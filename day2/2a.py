@@ -1,5 +1,6 @@
 numpad = [[1,2,3],[4,5,6],[7,8,9]]
 key = [1,1]
+code = ""
 
 def getNumber(line, key):
     for letter in line:
@@ -17,4 +18,6 @@ def getNumber(line, key):
 with open('day2.txt', 'r') as f:
     for line in f:
         key = getNumber(line, key)
-        print numpad[key[1]][key[0]]
+        code += str(numpad[key[1]][key[0]])
+
+print code
