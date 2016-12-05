@@ -23,7 +23,6 @@ with open('day1.txt', 'r') as inputfile:
 bearing = 0
 
 # "Step" through directions (literally)
-count = 0
 for d in directions:
     d = d.strip()
     bearing = normalizeDirection(bearing, d[0])
