@@ -21,13 +21,15 @@ goal = (3,3)
 frontier = Queue()
 frontier.put((start, []))
 
+paths = []
 while not frontier.empty():
     currentPos, currentPath = frontier.get()
     if currentPos == goal:
-        break
+        paths.append("".join(currentPath))
+        continue
     for direction in getDoors(currentPath):   
         nextPos = tuple(map(add, currentPos, moves[direction]))
         if (0 <= nextPos[0] <= 3) and (0 <= nextPos[1] <= 3):
             frontier.put((nextPos, currentPath + [direction]))
 
-print "".join(currentPath)
+print len(max(paths, key=len))
